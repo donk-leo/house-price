@@ -2,11 +2,14 @@
 
 第一阶段 baseline：对 `SalePrice` 使用 `log1p`，数值特征中位数填充并标准化，类别特征众数填充并 One-Hot 编码，最后训练 Ridge 回归。
 
+第二个实验 `exp002_semantic_ridge.py` 在不修改原始 CSV 的前提下，删除 `Id`，把“没有车库/地下室/游泳池”等设施缺失编码为 `None` 或 `0`，并将 `MSSubClass`、`MoSold`、`YrSold` 作为类别变量处理。
+
 ## 运行
 
 ```powershell
 python -m pip install -r requirements.txt
 python src/baseline_ridge.py
+python src/exp002_semantic_ridge.py
 ```
 
 脚本使用 5 折 `KFold(shuffle=True, random_state=42)` 输出本地 log-RMSE，并生成：
