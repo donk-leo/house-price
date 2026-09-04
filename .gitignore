@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local secrets and tooling
+.env
+.kaggle/
+
+# Generated outputs and caches
+outputs/submissions/*.csv
+*.db
+
+# Kaggle data is downloaded locally and should not be committed.
+data/raw/*.csv
+data/raw/*.zip
