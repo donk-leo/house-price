@@ -50,7 +50,7 @@ def prepare_features(frame: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
-def build_pipeline(X: pd.DataFrame) -> Pipeline:
+def build_pipeline(X: pd.DataFrame) -> Pipeline:#first deal
     numeric_features = X.select_dtypes(include=[np.number]).columns.tolist()
     categorical_features = X.select_dtypes(exclude=[np.number]).columns.tolist()
     numeric_pipeline = Pipeline([
